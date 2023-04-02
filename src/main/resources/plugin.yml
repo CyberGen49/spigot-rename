@@ -1,28 +1,33 @@
-main: org.simplecyber.tpr.Plugin
-name: CyberTPR
+main: org.simplecyber.rename.Plugin
+name: CyberRename
 api-version: 1.19
-version: 1.2.2
-description: Let users teleport to random locations within a set radius of spawn.
+version: 1.0.0
+description: Allow players to change the name and lore of their items with commands!
 commands:
-  rename: [rname, setname]
-    usage: /rename <set|remove> [name]
-    description: Renames or removes the custom name on the item in your hand.
-    permission: cyberrename.rename
-  relore:
-    aliases: [lore, setlore]
-    usage: /relore <set|remove> [lore]
+  setname:
+    aliases: [rename]
+    usage: /rename [name]
+    description: Sets or removes the custom name on the item in your hand.
+    permission: cyberrename.name
+  setlore:
+    aliases: [lore]
+    usage: /relore [lore]
     description: Sets or removes the lore on the item in your hand.
     permission: cyberrename.lore
-  cybertpr:
-    usage: /cyberrename [reload]
+  crename:
+    usage: /crename [reload]
     description: Manage CyberRename.
     permission: cyberrename.info
 permissions:
   cyberrename.info:
     default: true
-  cyberrename.rename:
+  cyberrename.name:
+    default: op
+  cyberrename.name.bypassLengthLimit:
     default: op
   cyberrename.lore:
+    default: op
+  cyberrename.lore.bypassLengthLimit:
     default: op
   cyberrename.admin:
     default: op

@@ -1,9 +1,45 @@
 
 # CyberRename Configuration
 
+# Settings for item names
+names:
+  # Sets the max length of custom item names, including formatting codes
+  max_length: 64
+  # Name cost settings
+  cost:
+    experience:
+      # If enabled, players will be charged a number of experience levels
+      # every time they change the name of an item
+      enabled: true
+      levels: 3
+
+# Settings for item lores
+lores:
+  # Sets the max length of lores, including formatting codes
+  max_length: 512
+  # Lore cost settings
+  cost:
+    experience:
+      # If enabled, players will be charged a number of experience levels
+      # every time they change the lore of an item
+      enabled: true
+      levels: 3
+  # Players can use this character in their lores to move to the next line
+  newline_string: "|"
+
 # Messages
 messages:
   reloaded: "&aConfig reloaded!"
+  name_changed: "&aYour item has been renamed to &r%0&r&a!"
+  name_removed: "&aYour item's name has been reset!"
+  name_too_long: "&cYour item name must be under %0 characters!"
+  lore_changed: "&aYour item's lore has been changed!"
+  lore_removed: "&aYour item's lore has been removed!"
+  lore_too_long: "&cYour lore must be under %0 characters!"
+  disallowed_formatting: "&cYou used disallowed formatting codes!"
+  holding_air: "&cPut an item in your main hand, then try again!"
+  item_mismatch: "&cYou aren't holding the same item!"
+  player_only: "&cOnly players can run this command!"
 
 # Changing this value will wipe your config!
-config_version: 1
+config_version: 5
