@@ -25,9 +25,13 @@ permissions:
     default: op
   cyberrename.name.bypassLengthLimit:
     default: op
+  cyberrename.name.bypassCost:
+    default: op
   cyberrename.lore:
     default: op
   cyberrename.lore.bypassLengthLimit:
+    default: op
+  cyberrename.lore.bypassCost:
     default: op
   cyberrename.admin:
     default: op

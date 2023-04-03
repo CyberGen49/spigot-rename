@@ -6,10 +6,10 @@ names:
   # Sets the max length of custom item names, including formatting codes
   max_length: 64
   # Name cost settings
+  # If xp is enabled, players will be charged the set number of levels every
+  # time they change or reset the custom name of an item
   cost:
-    experience:
-      # If enabled, players will be charged a number of experience levels
-      # every time they change the name of an item
+    xp:
       enabled: true
       levels: 3
 
@@ -18,14 +18,25 @@ lores:
   # Sets the max length of lores, including formatting codes
   max_length: 512
   # Lore cost settings
+  # If xp is enabled, players will be charged the set number of levels every
+  # time they change or remove the lore of an item
   cost:
-    experience:
-      # If enabled, players will be charged a number of experience levels
-      # every time they change the lore of an item
+    xp:
       enabled: true
       levels: 3
   # Players can use this character in their lores to move to the next line
   newline_string: "|"
+
+# Preview GUI settings
+# When enabled, players will be shown a preview of their item before changing
+# its name or lore, and be given "Confirm" and "Cancel" buttons
+preview_gui:
+  enabled: true
+  # GUI text elements
+  text:
+    title: "&3Preview item"
+    button_cancel: "&cCancel"
+    button_confirm: "&aConfirm"
 
 # Messages
 messages:
@@ -36,10 +47,12 @@ messages:
   lore_changed: "&aYour item's lore has been changed!"
   lore_removed: "&aYour item's lore has been removed!"
   lore_too_long: "&cYour lore must be under %0 characters!"
-  disallowed_formatting: "&cYou used disallowed formatting codes!"
+  charge_xp: "&aYou were charged %0 experience levels!"
+  not_enough_xp: "&cYou don't have the required %0 experience levels!"
+  disallowed_formatting: "&6You don't have permission to use &e%0&6!"
   holding_air: "&cPut an item in your main hand, then try again!"
   item_mismatch: "&cYou aren't holding the same item!"
   player_only: "&cOnly players can run this command!"
 
 # Changing this value will wipe your config!
-config_version: 5
+config_version: 1
