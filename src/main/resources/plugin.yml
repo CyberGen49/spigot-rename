@@ -10,7 +10,7 @@ commands:
     description: Sets or removes the custom name on the item in your hand.
     permission: cyberrename.name
   setlore:
-    aliases: [lore]
+    aliases: [lore, relore]
     usage: /relore [lore]
     description: Sets or removes the lore on the item in your hand.
     permission: cyberrename.lore
