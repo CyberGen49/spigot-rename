@@ -51,17 +51,14 @@ public class Plugin extends JavaPlugin {
     public static void sendMsg(Object target, String text, Object... replacements) {
         text = strFill(text, replacements);
         text = translateColors(text);
-        if (target instanceof ConsoleCommandSender) {
-            ConsoleCommandSender console = (ConsoleCommandSender) target;
-            console.sendMessage(strFill("[%0] %1", Bukkit.getName(), text));
-            return;
-        }
-        if (target instanceof CommandSender) {
-            ((CommandSender) target).sendMessage(text);
-            return;
-        }
         if (target instanceof Player) {
             ((Player) target).sendMessage(text);
+        } else if (target instanceof ConsoleCommandSender) {
+            ((ConsoleCommandSender) target).sendMessage(text);
+        } else if (target instanceof CommandSender) {
+            ((CommandSender) target).sendMessage(text);
+        } else {
+            log("warning", "Tried sending a message to an invalid target!");
             return;
         }
     }
@@ -78,11 +75,7 @@ public class Plugin extends JavaPlugin {
                 level = Level.INFO;
                 break;
         }
-        if (type == "info") {
-            sendMsg(Bukkit.getServer().getConsoleSender(), text);
-        } else {
-            Bukkit.getLogger().log(level, text);
-        }
+        Bukkit.getLogger().log(level, text);
     }
     public static void log(String text) {
         log("info", text);
@@ -300,9 +293,9 @@ public class Plugin extends JavaPlugin {
             reload();
         }
         registerFormatPermissions();
-        log("&aAll set!");
+        log("All set!");
     }
     @Override public void onDisable() {
-        log("&dCatch you later!");
+        log("Catch you later!");
     }
 }
